@@ -1,0 +1,13 @@
+<div class="data">
+  <div class="container">
+    <% @posts.each do |post| %>
+      <div class="posts-item">
+        <%= post.id %>
+        <%= post.uuid %>
+        <%= post.content %>
+        <%# 第三引数でpostリクエストを指定する %>
+        <%= link_to("削除","/data/#{post.id}", {method: "delete"}) %>
+      </div>
+    <% end %>
+  </div>
+</div>

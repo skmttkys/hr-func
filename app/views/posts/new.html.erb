@@ -1,0 +1,14 @@
+<h1>DB登録テスト</h1>
+  <table>
+    <%= form_with model: @post do |form| %>
+      <tr>
+        <td><%= form.label :uuid %></td>
+        <td><%= form.text_field :uuid %></td>
+      </tr>
+      <tr>
+        <td><%= form.label :content %></td>
+        <td><%= form.text_field :content %></td>
+        <td><%= form.submit "登録" %></td>
+      </tr>
+    <% end %>
+  </table>

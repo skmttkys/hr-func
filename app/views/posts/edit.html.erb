@@ -1,0 +1,12 @@
+<%= form_with model: @post,method: :patch do |form| %>
+  <div>
+    <%= form.label :uuid %><br>
+    <%= form.text_field :uuid %>
+  </div>
+  <div>
+    <%= form.label :content %><br>
+    <%= form.text_area :content %>
+  </div>
+  <div><%= form.submit "更新" %></div>
+<% end %>
+<%= link_to "戻る", posts_path %>

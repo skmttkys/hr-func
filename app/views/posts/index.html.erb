@@ -1,0 +1,20 @@
+<% flash.each do |message_type, message| %>
+<div class="alert alert-<%= message_type %>"><%= message %></div>
+<% end %>
+
+<div class="posts">
+  <div class="container">
+    <% @posts.each do |post| %>
+      <div class="posts-item">
+        <tr>
+          <td>id:<%= post.id %></td>
+          <td>uuid:<%= post.uuid %></td>
+          <td>content:<%= post.content %></td>
+          <td><%= link_to '編集', edit_post_path(post) %></td>
+          <%# linl_toだとDELETEでエラー発生する button_toで代替する %>
+          <td><%= button_to("削除","/posts/#{post.id}", {method: "delete"}) %></td>
+        </tr>
+      </div>
+    <% end %>
+  </div>
+</div>
